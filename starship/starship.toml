@@ -1,0 +1,26 @@
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = '[➜](bold red)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+[java]
+format = ' [${symbol}(${version})]($style)'
+style = 'red dimmed'
+disabled = true
+
+[gradle]
+format = '[${symbol}(${version})]($style)'
+style = 'red'
+disabled = true
+
+[git_branch]
+symbol = '🌱 '
+
+[git_metrics]
+disabled = false
+
+[git_status]
+format='([$all_status$ahead_behind]($style) )'
+stashed='//'
+
+[aws]
+disabled = true
