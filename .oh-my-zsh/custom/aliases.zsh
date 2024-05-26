@@ -1,6 +1,5 @@
 # misc
-alias l=exa
-alias cd=z
+alias l=lsd
 alias ll="exa -la"
 alias m="micro"
 alias g="git"

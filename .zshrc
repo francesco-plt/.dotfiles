@@ -73,7 +73,13 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+  git
+  colored-man-pages
+  zsh-autosuggestions
+  # zsh-syntax-highlighting
+  # zsh-autocomplete
+)
 
 # oh my zsh
 source $ZSH/oh-my-zsh.sh
@@ -118,40 +124,20 @@ export PATH="$HOME/.aws:$PATH"
 # adding some more scripts to path
 export PATH="$HOME/dev/scripts:$PATH"
 
-# global aliases
-alias 'cd..'='cd_up'
-alias hc=health_check
-alias h=help
-
 # git large repos lag fix
 # git config --global --add oh-my-zsh.hide-dirty 1
 
-# CONDA
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/francesco.pallotta/miniforge3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/francesco.pallotta/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/Users/francesco.pallotta/miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/francesco.pallotta/miniforge3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+export GRAALVM_HOME=/Library/Java/JavaVirtualMachines/graalvm-jdk-21.0.2+13.1/Contents/Home
+export PATH=/Library/Java/JavaVirtualMachines/graalvm-jdk-21.0.2+13.1/Contents/Home/bin:$PATH
 
+# zsh syntax highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh autocomplete
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 eval $(thefuck --alias)
 eval "$(mcfly init zsh)"
-eval "$(zoxide init zsh)"
-
- export GRAALVM_HOME=/Library/Java/JavaVirtualMachines/graalvm-jdk-21.0.2+13.1/Contents/Home
- export PATH=/Library/Java/JavaVirtualMachines/graalvm-jdk-21.0.2+13.1/Contents/Home/bin:$PATH
-
-# Created by `pipx` on 2024-02-26 10:25:37
-export PATH="$PATH:/Users/francesco.pallotta/.local/bin"
-
-# make python great again
-alias python3="/opt/homebrew/Cellar/python@3.11/3.11.8/bin/python3.11"
