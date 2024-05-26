@@ -1,7 +1,7 @@
 #!/bin/bash
 
 monitors=$(yabai -m query --displays)
-internal_monitor_uuid=$(echo "$monitors" | jq -r '.[] | select(.frame.w == 1512.0000 and .frame.h == 982.0000) | .uuid')monitor_uuid=$(echo "$json" | jq -r '.[] | select(.frame.w == 1512.0000 and .frame.h == 982.0000) | .uuid')
+internal_monitor_uuid=$(echo "$monitors" | jq -r '.[] | select(.frame.w == 1512.0000 and .frame.h == 982.0000) | .uuid')
 
 # Loop through each monitor and apply settings if it is not the internal monitor
 echo "$monitors" | jq -c '.[]' | while read -r monitor; do
