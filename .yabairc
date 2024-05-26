@@ -1,0 +1,26 @@
+#!/bin/bash
+
+monitors=$(yabai -m query --displays)
+internal_monitor_uuid=$(echo "$monitors" | jq -r '.[] | select(.frame.w == 1512.0000 and .frame.h == 982.0000) | .uuid')monitor_uuid=$(echo "$json" | jq -r '.[] | select(.frame.w == 1512.0000 and .frame.h == 982.0000) | .uuid')
+
+# Loop through each monitor and apply settings if it is not the internal monitor
+echo "$monitors" | jq -c '.[]' | while read -r monitor; do
+	# Extract the monitor's UUID
+	uuid=$(echo "$monitor" | jq -r '.uuid')
+
+	# Check if the monitor's UUID is not the internal monitor's UUID
+	if [ "$uuid" != "$internal_monitor_uuid" ]; then
+		# Extract the monitor's id
+		id=$(echo "$monitor" | jq '.index')
+
+		# Apply your configurations to the external monitor
+		yabai -m config layout bsp
+		yabai -m config top_padding 4
+		yabai -m config right_padding 4
+		yabai -m config bottom_padding 4
+		yabai -m config left_padding 4
+		yabai -m config window_gap 4
+		yabai -m config mouse_follow_focus true
+		yabai -m config mouse_drop_action stack
+	fi
+done
