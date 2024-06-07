@@ -1,6 +1,6 @@
 # misc
 alias l=lsd
-alias ll="exa -la"
+alias ll="lsd -la"
 alias m="micro"
 alias g="git"
 alias n="nvim"
@@ -30,9 +30,5 @@ alias gc="git clone"
 alias gs="git status"
 alias gl="git log --graph --oneline --decorate --all"
 alias gp="git pull"
-alias gu="update_git_branches"
 alias gck="git checkout"
-alias gb="git stash && git checkout - && git stash apply"
-alias gcl="git gc && git fsck && git prune"
 alias gsh="git show"
-alias gdb="git_delete_branches"

@@ -134,7 +134,7 @@ export PATH=/Library/Java/JavaVirtualMachines/graalvm-jdk-21.0.2+13.1/Contents/H
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh autocomplete
-source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -143,3 +143,4 @@ eval $(thefuck --alias)
 eval "$(mcfly init zsh)"
 
 . "$HOME/.cargo/env"
+export PATH=$HOME/.docker/bin:$PATH
