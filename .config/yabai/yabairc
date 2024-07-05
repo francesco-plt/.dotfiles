@@ -1,0 +1,3 @@
+yabai -m query --spaces |
+	jq '.[] | select(.display != 1).index' |
+	xargs -I{} yabai -m space {} --layout bsp
