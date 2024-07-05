@@ -20,7 +20,7 @@ alias dm="dark-mode"
 alias bat="bat --theme='Monokai Extended'"
 alias vpn_login="sudo openvpn $HOME/.config/openvpn/profile.conf"
 alias aws_login="sso-login.sh"
-
+alias godoc="godoc -http=localhost:8000"
 # git
 alias co=checkout
 alias br=branch
@@ -29,6 +29,6 @@ alias st=status
 alias gc="git clone"
 alias gs="git status"
 alias gl="git log --graph --oneline --decorate --all"
-alias gp="git pull"
+alias gp="git pull --rebase"
 alias gck="git checkout"
 alias gsh="git show"

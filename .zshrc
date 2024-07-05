@@ -77,6 +77,7 @@ plugins=(
   git
   colored-man-pages
   zsh-autosuggestions
+  git-auto-fetch
   # zsh-syntax-highlighting
   # zsh-autocomplete
 )
@@ -144,3 +145,7 @@ eval "$(mcfly init zsh)"
 
 . "$HOME/.cargo/env"
 export PATH=$HOME/.docker/bin:$PATH
+
+# go
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
