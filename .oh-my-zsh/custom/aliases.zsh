@@ -1,6 +1,7 @@
 # misc
 alias l=lsd
 alias ll="lsd -la"
+alias nv="nvim"
 alias m="micro"
 alias g="git"
 alias n="nvim"
@@ -21,6 +22,9 @@ alias bat="bat --theme='Monokai Extended'"
 alias vpn_login="sudo openvpn $HOME/.config/openvpn/profile.conf"
 alias aws_login="sso-login.sh"
 alias godoc="godoc -http=localhost:8000"
+alias ytmp3="yt-dlp -x --audio-format mp3"
+alias wav2mp3="ffmpeg -vn -ar 44100 -ac 2 -b:a 320k output.mp3 -i"
+
 # git
 alias co=checkout
 alias br=branch
@@ -32,3 +36,6 @@ alias gl="git log --graph --oneline --decorate --all"
 alias gp="git pull --rebase"
 alias gck="git checkout"
 alias gsh="git show"
+
+# fzf
+alias fzbat="fzf --preview 'bat --color=always --theme=\"Monokai Extended\" {}' --bind 'f1:execute(nvim {}),f2:execute(less -f {})'"
