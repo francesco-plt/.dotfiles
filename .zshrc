@@ -149,3 +149,6 @@ export PATH=$HOME/.docker/bin:$PATH
 # go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
+
+# git gpg
+export GPG_TTY=$(tty)
